@@ -6,7 +6,7 @@ import twitter4j.conf.ConfigurationBuilder;
 
 public class Configuration {
 	
-	public Twitter instance() {
+	public static Twitter instance() {
 		ConfigurationBuilder cb = new ConfigurationBuilder();
 		cb.setDebugEnabled(true)
 		  .setOAuthConsumerKey("bF3ZBSIiThj1eEwTpnhtM60jF")
