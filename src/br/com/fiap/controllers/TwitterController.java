@@ -78,14 +78,17 @@ public class TwitterController {
 					} else {
 						this.retwetts.put(format.format(data), 1);
 					}
-				} else {
+				}
+				
+				if (tweet.getFavoriteCount() > 0) {
 					// Favoritados
 					if (this.favs.containsKey(format.format(data))) {
-						this.favs.put(format.format(data), this.favs.get(format.format(data)) + 1);
+						this.favs.put(format.format(data), this.favs.get(format.format(data)) + tweet.getFavoriteCount());
 					} else {
-						this.favs.put(format.format(data), 1);
+						this.favs.put(format.format(data), tweet.getFavoriteCount());
 					}
 				}
+					
 				
 				// Nome do autor
 				this.pessoas.add(tweet.getUser().getName());
